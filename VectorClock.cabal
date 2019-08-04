@@ -1,0 +1,38 @@
+name:                VectorClock
+version:             0.1.0.0
+synopsis:            VectorClock implementation
+description:         Please see README.md
+homepage:            https://github.com/certainty/haskell-misc/VectorClock#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          certainty@lisp-unleashed.de
+copyright:           2016 Certainty
+category:            Misc
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Data.VectorClock
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+  build-depends:       containers
+                     , binary
+
+test-suite VectorClock-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , VectorClock
+                     , hspec
+                     , containers
+                     , QuickCheck
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/certainty/haskell-misc
